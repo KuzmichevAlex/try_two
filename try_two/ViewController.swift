@@ -21,7 +21,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        // Setup main Label
-        
         mainLable.font = mainLable.font.withSize(35)
         mainLable.textAlignment = .center
         mainLable.numberOfLines = 2
@@ -39,6 +38,13 @@ class ViewController: UIViewController {
         
         mainLable.text = String(slider.value)
         
+        //Setup Date Picker
+        pickerOfData.locale = Locale.init(identifier: "ru_RU")
+        // Локализация в соответствии с текущими настройками системы
+        //pickerOfData.locale = Locale.current
+        
+        removeObjects.onTintColor = .red
+        lableOfSwich.text = "Скрыть все элементы"
     }
     
     @IBAction func changeSegments() {
@@ -73,10 +79,29 @@ class ViewController: UIViewController {
             fieldOfText.text = nil
         }
     }
+    
+    @IBAction func changeData() {
+        let dateFormator = DateFormatter()
+        dateFormator.dateStyle = .medium
+        dateFormator.locale = Locale(identifier: "ru_RU")
         
-    @IBAction func removingObjectsInScreen() {
+        let dateValue = dateFormator.string(from: pickerOfData.date)
+        mainLable.text = dateValue
     }
     
+        
+    @IBAction func removingObjectsInScreen() {
+        segmenteControl.isHidden.toggle()
+        mainLable.isHidden.toggle()
+        slider.isHidden.toggle()
+        fieldOfText.isHidden.toggle()
+        startButton.isHidden.toggle()
+        pickerOfData.isHidden.toggle()
+        
+        lableOfSwich.text = removeObjects.isOn ? "Показать все элементы" : "Скрыть все элементы"
+    }
+    
+
 }
 
 extension ViewController {

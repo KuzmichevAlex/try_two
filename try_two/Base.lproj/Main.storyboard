@@ -57,7 +57,7 @@
                                             <action selector="pressStartButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="rnt-5Z-RXL"/>
                                         </connections>
                                     </button>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xhL-GT-MsN">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xhL-GT-MsN">
                                         <rect key="frame" x="286" y="833" width="51" height="31"/>
                                         <connections>
                                             <action selector="removingObjectsInScreen" destination="BYZ-38-t0r" eventType="valueChanged" id="lQH-OB-kBa"/>
@@ -71,6 +71,9 @@
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="et8-qN-y92">
                                         <rect key="frame" x="15" y="543" width="320" height="216"/>
+                                        <connections>
+                                            <action selector="changeData" destination="BYZ-38-t0r" eventType="valueChanged" id="Upe-2K-9vx"/>
+                                        </connections>
                                     </datePicker>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
